@@ -88,7 +88,7 @@ fn dfs_paths_rec(
     } else if max_pop == node_pop {
         max_path_len = path.len();
     } else {
-        if path.len() != 0 {
+        if !path.is_empty() {
             panic!(
                 "path len {}, with max pop {}, and node pop {}",
                 path.len(),
@@ -154,7 +154,13 @@ fn main() {
         // .collect::<Vec<NodeIndex>>()
         .par_iter()
         .progress_with(bar)
-        .map(|node| dfs_paths(&dual_graph, *node, (ideal_pop * opt.tolerance * 2.0) as usize))
+        .map(|node| {
+            dfs_paths(
+                &dual_graph,
+                *node,
+                (ideal_pop * opt.tolerance * 2.0) as usize,
+            )
+        })
         .max()
         .unwrap();
 

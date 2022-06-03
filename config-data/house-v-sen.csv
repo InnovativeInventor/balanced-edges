@@ -1,0 +1,52 @@
+Name,House,Senate,Grouping,Other
+Alabama,105,35,??,?
+Alaska,40,20,2,
+Arizona,60,30,-,"2 house, 1 sen per district"
+Arkansas,100,35,-,?
+California,80,40,-,independent district lines
+Colorado,65,35,-,?
+Connecticut,151,36,-,?
+Delaware,41,21,-,?
+Florida,120,40,??,?
+Georgia,180,56,-,?
+Hawaii,51,25,-,independent district lines
+Idaho,70,35,-,"2 house, 1 sen per district"
+Illinois,118,59,2,
+Indiana,100,50,??,?
+Iowa,100,50,??,?
+Kansas,125,40,-,?
+Kentucky,100,38,-,independent district lines
+Louisiana,105,39,-,?
+Maine,151,35,-,?
+Maryland,141,47,-,"3 house, 1 sen per district"
+Massachusetts,160,40,??,?
+Michigan,110,38,-,?
+Minnesota,134,67,2,
+Mississippi,122,52,-,?
+Missouri,163,34,-,?
+Montana,50,25,2,
+Nebraska,0,49,-,only unicameral body
+Nevada,42,21,2,"*this is current system, but there are complicated provisions for other possibilities"
+New Hampshire,400,24,-,crazy floterial system
+New Jersey,80,40,-,"2 house, 1 sen per district"
+New Mexico,70,42,-,?
+New York,150,63,-,?
+North Carolina,120,50,-,?
+North Dakota,94,47,-,"2 house, 1 sen per district"
+Ohio,99,33,??,?
+Oklahoma,101,48,-,?
+Oregon,60,30,2,
+Pennsylvania,203,50,-,independent district lines
+Rhode Island,75,38,-,?
+South Carolina,124,46,-,?
+South Dakota,70,35,-,"2 house, 1 sen per district"
+Tennessee,99,33,??,?
+Texas,150,31,-,independent district lines
+Utah,75,29,-,?
+Vermont,150,30,-,"House: 66 single, 42 double member districts; Senate: 13 multi-member districts"
+Virginia,100,40,-,?
+Washington,98,49,-,"2 house, 1 sen per district"
+West Virginia,100,34,-,?
+Wisconsin,99,33,3,
+Wyoming,60,30,2,
+total,5361,1947,,7308

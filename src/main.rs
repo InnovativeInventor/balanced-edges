@@ -1,12 +1,12 @@
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use petgraph::graph::NodeIndex;
 use petgraph::stable_graph::StableGraph;
+use rand::prelude::*;
 use rayon::prelude::*;
 use serde_json::Value;
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::fs;
-use rand::prelude::*;
 use structopt::StructOpt;
 
 // #[derive(Debug, Clone, Copy)]
@@ -86,17 +86,28 @@ fn dfs_paths_rec(
             }
         }
     } else if max_pop == node_pop {
-        max_path_len = path.len(); 
+        max_path_len = path.len();
     } else {
         if path.len() != 0 {
-            panic!("path len {}, with max pop {}, and node pop {}", path.len(), max_pop, node_pop) // should not happen
+            panic!(
+                "path len {}, with max pop {}, and node pop {}",
+                path.len(),
+                max_pop,
+                node_pop
+            ) // should not happen
         }
     }
     max_path_len
 }
 
 fn dfs_paths(graph: &StableGraph<Pop, ()>, node: NodeIndex, max_pop: Pop) -> usize {
-    let length = dfs_paths_rec(graph, node, graph[node], &mut HashSet::with_capacity(40), max_pop);
+    let length = dfs_paths_rec(
+        graph,
+        node,
+        graph[node],
+        &mut HashSet::with_capacity(40),
+        max_pop,
+    );
     println!("Max length for node {:?}: {}", node, length);
     length
 }
@@ -107,24 +118,19 @@ fn dfs_paths(graph: &StableGraph<Pop, ()>, node: NodeIndex, max_pop: Pop) -> usi
     about = "Calculator to determine an upper bound for M for reversible ReCom"
 )]
 struct Opt {
-    #[structopt(short = "f", long = "file", help = "The filename to read the dual graph from")]
+    #[structopt(
+        short = "f",
+        long = "file",
+        help = "The filename to read the dual graph from"
+    )]
     filename: String,
 
-    #[structopt(
-        short = "d",
-        long = "districts",
-        help = "The number of districts"
-    )]
+    #[structopt(short = "d", long = "districts", help = "The number of districts")]
     districts: usize,
 
-    #[structopt(
-        short = "t",
-        long = "tol",
-        help = "The population tolerance"
-    )]
+    #[structopt(short = "t", long = "tol", help = "The population tolerance")]
     tolerance: f64,
 }
-
 
 fn main() {
     let opt = Opt::from_args();

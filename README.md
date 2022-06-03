@@ -8,8 +8,9 @@ Example usage (for MA senate, 40 districts, at 0.05 epsilon):
 ```
 ./target/release/balanced-edges -f ma-vtd-connected.json -d 40 -t 0.05
 ```
+This produces an upper bound of `22` in 23 seconds with 10 cores on my laptop.
 
-Runtime is somewhere around `O(v*2^d)`, since this is on planar graphs and this is an [NP-hard problem](https://en.wikipedia.org/wiki/Longest_path_problem).
+The runtime for this is somewhere around `O(v*2^d)`, since this is on planar graphs and this is an [NP-hard problem](https://en.wikipedia.org/wiki/Longest_path_problem).
 
 ## Dual graphs
 Download them from here: http://data.mggg.org.s3-website.us-east-2.amazonaws.com/dual-graphs/

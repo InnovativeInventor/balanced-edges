@@ -154,12 +154,12 @@ fn main() {
         // .collect::<Vec<NodeIndex>>()
         .par_iter()
         .progress_with(bar)
-        .map(|node| dfs_paths(&dual_graph, *node, (ideal_pop * opt.tolerance) as usize))
+        .map(|node| dfs_paths(&dual_graph, *node, (ideal_pop * opt.tolerance * 2.0) as usize))
         .max()
         .unwrap();
 
     println!(
-        "Final max path length for {} / {} at pop tol {} is: {}",
+        "Final max path length for {} for d={} t={} is: {}",
         opt.filename, opt.districts, opt.tolerance, max_path_length
     );
 }

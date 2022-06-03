@@ -158,5 +158,8 @@ fn main() {
         .max()
         .unwrap();
 
-    println!("Final max path length: {}", max_path_length);
+    println!(
+        "Final max path length for {} / {} at pop tol {} is: {}",
+        opt.filename, opt.districts, opt.tolerance, max_path_length
+    );
 }

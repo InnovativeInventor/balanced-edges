@@ -1,7 +1,7 @@
 use indicatif::{ParallelProgressIterator, ProgressBar, ProgressStyle};
 use petgraph::graph::NodeIndex;
 use petgraph::stable_graph::StableGraph;
-use rand::prelude::*;
+// use rand::prelude::*;
 use rayon::prelude::*;
 use serde_json::Value;
 use std::collections::HashMap;

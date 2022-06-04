@@ -8,7 +8,7 @@ Example usage (for MA senate, 40 districts, at 0.05 epsilon):
 ```
 ./target/release/balanced-edges -f ma-vtd-connected.json -d 40 -t 0.05
 ```
-This produces an upper bound of `22` in 23 seconds with 10 cores on my laptop.
+This produces an upper bound of `9` in 23 seconds with 10 cores on my laptop.
 
 The runtime for this is somewhere around `O(v*2^d)`, since this is on planar graphs and this is an [NP-hard problem](https://en.wikipedia.org/wiki/Longest_path_problem).
 

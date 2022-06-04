@@ -3,10 +3,10 @@ use petgraph::graph::NodeIndex;
 use petgraph::stable_graph::StableGraph;
 // use rand::prelude::*;
 use rayon::prelude::*;
-use serde_json::Value;
-use std::collections::{HashSet, HashMap};
-use std::hash::BuildHasherDefault;
 use rustc_hash::FxHasher;
+use serde_json::Value;
+use std::collections::{HashMap, HashSet};
+use std::hash::BuildHasherDefault;
 // use nohash_hasher::NoHashHasher;
 use std::fs;
 use structopt::StructOpt;
@@ -69,7 +69,7 @@ fn dfs_paths_rec(
     graph: &StableGraph<Pop, ()>,
     node: NodeIndex,
     node_pop: Pop,
-    path: &mut HashSet::<NodeIndex, BuildHasherDefault<FxHasher>>,
+    path: &mut HashSet<NodeIndex, BuildHasherDefault<FxHasher>>,
     max_pop: Pop,
 ) -> usize {
     let mut max_path_len = 0;
@@ -106,15 +106,9 @@ fn dfs_paths_rec(
 }
 
 fn dfs_paths(graph: &StableGraph<Pop, ()>, node: NodeIndex, max_pop: Pop) -> usize {
-    let mut path: HashSet::<NodeIndex, BuildHasherDefault<FxHasher>> =
-            HashSet::with_capacity_and_hasher(40, BuildHasherDefault::default());
-    let length = dfs_paths_rec(
-        graph,
-        node,
-        graph[node],
-        &mut path,
-        max_pop,
-    );
+    let mut path: HashSet<NodeIndex, BuildHasherDefault<FxHasher>> =
+        HashSet::with_capacity_and_hasher(40, BuildHasherDefault::default());
+    let length = dfs_paths_rec(graph, node, graph[node], &mut path, max_pop);
     println!("Max length for node {:?}: {}", node, length);
     length
 }

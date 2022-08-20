@@ -11,7 +11,7 @@ In order to sample properly, the reversible ReCom variant has to know the maximu
 Previously this was done through trial and error, however, with a recursive DFS search, we can establish firm upper bounds on *M* by reducing this problem down to a variant of the longest path problem.
 The runtime for this implementation is somewhere around `O(v*2^d)` (it's DFS search for the longest path in the graph, not DFS for a particular node).
 
-Note: Since redistricting occurs on planar graphs, this is an [NP-hard problem](https://en.wikipedia.org/wiki/Longest_path_problem).
+Note: Since redistricting typically occurs on planar graphs, this is an [NP-hard problem](https://en.wikipedia.org/wiki/Longest_path_problem).
 
 ## Usage
 
